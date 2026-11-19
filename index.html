@@ -43,9 +43,14 @@
   <!-- ESCENA DE REALIDAD AUMENTADA -->
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false;">
 
-    <!-- Tarjeta A: marcador Hiro → Cubo azul -->
+    <!-- Recursos (precarga de la imagen JPEG) -->
+    <a-assets>
+      <img id="foto-hiro" src="foto.jpeg" crossorigin="anonymous">
+    </a-assets>
+
+    <!-- Tarjeta A: marcador Hiro → Foto JPEG -->
     <a-marker preset="hiro" id="marcadorA">
-      <a-box color="blue" position="0 0.5 0" scale="1 1 1" class="figura3d"></a-box>
+      <a-image src="#foto-hiro" position="0 0.1 0" rotation="-90 0 0" width="1.5" height="1.5" scale="1 1 1" class="figura3d"></a-image>
     </a-marker>
 
     <!-- Tarjeta B: marcador Kanji → Esfera roja -->
